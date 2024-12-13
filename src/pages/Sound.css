@@ -1,0 +1,131 @@
+.sound-page {
+    position: relative;
+    z-index: 1;
+    background: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sound-page h1 {
+    color: var(--softblack);
+    font-size: 5rem;
+    max-width: 60%;
+    font-family: var(--bowlby);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
+    line-height: 1.3;
+  }
+  
+  .sound-page p {
+    color: var(--white);
+    font-family: var(--fira);
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .search-bar {
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-bar input {
+    font-family: var(--fira);
+    background-color: var(--white);
+    width: 50%;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border: 2px solid var(--softblack);
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .search-bar input:focus {
+    border-color: #322f61;
+  }
+  
+  .sound-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    justify-items: center;
+  }
+  
+  .sound-item {
+    background-color: var(--darkgreen);
+    color: var(--softblack);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .sound-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .sound-item audio {
+    margin-top: 1rem;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: red;
+    font-family: var(--fira);
+    font-size: 1rem;
+  }
+  
+
+  /* Style for the search button */
+.search-btn {
+    background-color: var(--white);
+    color: var(--softblack);
+    border: none;                
+    padding: 10px 20px;         
+    font-size: 16px;            
+    cursor: pointer;            
+    border-radius: 25px;          
+    transition: background-color 0.3s ease;  
+    font-family: var(--fira); 
+    font-size: 0.8rem; 
+  }
+  
+  /* Style for the search button on hover */
+  .search-btn:hover {
+    background-color: var(--darkgreen);  /* Darker green on hover */
+  }
+  
+  /* Style for the search button when disabled */
+  .search-btn:disabled {
+    background-color: #ccc; /* Light grey background when disabled */
+    cursor: not-allowed; /* Not-allowed cursor */
+  }
+
+  /* Continue Button Styling */
+.continue-btn-wrapper {
+    margin-top: 2rem;
+  }
+  
+  .continue-btn {
+    background-color: var(--white);
+    color: var(--softblack);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    font-family: var(--fira);
+  }
+  
+  .continue-btn:hover {
+    background-color: var(--darkgreen);
+  }

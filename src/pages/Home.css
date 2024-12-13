@@ -1,0 +1,108 @@
+/* General Page Styling */
+.landing-page {
+    background-color: var(--blue);
+    overflow-x: hidden; 
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    text-align: center;
+  }
+  
+  .hero h1 {
+    max-width: 60%;
+    color: var(--softblack);
+    font-size: 10rem;
+    font-family: var(--bowlby);
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .scroll-indicator {
+    margin-top: 2rem;
+    animation: bounce 2s infinite;
+  }
+  
+  .scroll-indicator span {
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+  
+  /* Bounce Animation for the Arrow */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  /* Content Section */
+  .content {
+    height: 100vh;
+  }
+  
+  /* Introduction Section */
+  .intro {
+    background-color: var(--softblack);
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 60%;
+  }
+  
+  .intro p {
+    color: var(--blue);
+    font-family: var(--signika);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.5rem;
+  }
+  
+  /* Exercise Cards Section */
+  .exercises {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .exercise-card {
+    background-color: var(--darkergreen);
+    color: var(--softblack);
+    font-family: var(--signika);
+    padding: 1.5rem;
+    border-radius: 25px;
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .exercise-card h2 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  

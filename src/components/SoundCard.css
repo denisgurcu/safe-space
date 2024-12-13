@@ -1,0 +1,71 @@
+/* Sound Card Styling */
+.sound-card {
+  width: 100%;
+  max-width: 300px; /* Limit card size for consistent layout */
+  padding: 1rem 2rem 2em 1rem;
+  background: #E8E4DB;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  object-fit: cover;
+}
+
+.sound-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Sound Info Styling */
+.sound-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* Increased gap */
+}
+
+.sound-name {
+  font-family: var(--fira);
+  font-size: 0.8rem;
+  color: var(--softblack);
+  margin-bottom: 0;
+}
+
+/* Audio Element Styling */
+.audio-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; /* Increased gap between name and player */
+}
+
+audio {
+  width: 100%;
+  border-radius: 5px;
+}
+.button-container {
+    margin-top: 3rem;
+}
+
+/* Set as Background Button Styling */
+.set-bg-btn {
+    background-color: var(--white);
+    color: var(--softblack);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .set-bg-btn.playing {
+    background-color: var(--darkgreen);
+    color: var(--white);
+  }
+  
+  .set-bg-btn:hover {
+    background-color: var(--darkgreen);
+    color: var(--white);
+  }

@@ -1,0 +1,38 @@
+.header {
+  position: fixed; 
+  top: 20px; 
+  width: 100%; 
+  z-index: 100;     
+  text-align: center; 
+
+}
+  .nav {
+    display: flex;
+    justify-content: center; 
+    gap: 2rem; 
+    background-color: var(--white);
+    border: 2px solid black; 
+    padding: 1rem 1rem; 
+    max-width: 10%; 
+    margin: 0 auto; 
+  }
+  
+  .nav-link {
+    color: var(--blue); 
+    text-decoration: none; 
+    font-family: var(--fira);
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2rem; 
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--red); 
+  }
+  
+  .active {
+    font-weight: 800; 
+    text-decoration: underline; 
+  }
+  

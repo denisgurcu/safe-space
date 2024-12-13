@@ -1,0 +1,38 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Coiny&family=Fira+Mono:wght@400;500;700&family=Host+Grotesk:ital@0;1&family=Inconsolata:wght@200..900&family=Signika:wght@300..700&family=Wendy+One&display=swap');
+/* Define Root Variables */
+:root {
+  /* Fonts */
+  --host: 'Host Grotesk', sans-serif;
+  --bowlby: 'Bowlby One', sans-serif;
+  --inconsolata: 'Inconsolata', monospace;
+  --signika: 'Signika', sans-serif;
+  --wendy: 'Wendy One', serif;
+  --fira: "Fira Mono", monospace;
+
+  /* Colors */
+  --white: #fdfdf9; 
+  --beige: #f2dece; 
+  --darkbeige: #ece6d6; 
+  --blue: #adbcc3; 
+  --softblack: #2d2c38; 
+  --red: #902124;
+  --darkred: #41140e; 
+  --darkergreen: #A09532;
+  --darkgreen: #c9bb3f;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--blue);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+main {
+  margin-top: 4rem; 
+  min-height: calc(100vh - 4rem - 4rem);
+  text-decoration: none;
+}

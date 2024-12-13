@@ -1,0 +1,35 @@
+.footer {
+  bottom: 0; /* Aligns to the bottom */
+  width: 100%; /* Full width across the viewport */
+  z-index: 10; /* Ensures it stays on top of other content */
+  padding: 1rem 0; /* Top and bottom padding */
+  text-align: center; /* Center-aligns content */
+}
+
+.footer-info {
+  display: flex;
+  justify-content: center;
+  /* Centers the nav links */
+  gap: 2rem;
+  /* Spacing between links */
+  background-color: var(--white);
+  /* Box background color */
+  border: 2px solid black;
+  /* Stroke added to the box */
+  padding: 1rem 1rem;
+  /* Padding inside the nav box */
+  max-width: 30%;
+  /* Makes the nav bar narrow */
+  margin: 0 auto;
+  /* Centers the nav bar within the header */
+}
+
+.footer p {
+  font-family: var(--fira);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.2rem;
+  /* Adjust font size */
+  margin: 0;
+  /* Removes default margins */
+}

@@ -115,8 +115,8 @@ const Sound = () => {
         <div className="sound-page">
             <h1>Which sound helps you feel at ease?</h1>
 
-                 {/* Explanatory Text */}
-                    <p>Select an audio below to set your background sound, then click continue at the bottom!</p>
+            {/* Explanatory Text */}
+            <p>Select an audio below to set your background sound, then click continue at the bottom!</p>
 
             <div className="categories">
                 {predefinedCategories.map((category) => (

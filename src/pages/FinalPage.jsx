@@ -7,7 +7,7 @@ const FinalPage = () => {
   const location = useLocation();
 
   const [animationStopped, setAnimationStopped] = useState(false);
-  const backgroundAudioRef = useRef(null);
+  const backgroundAudioRef = useRef(null); // Refs will hold the audio element
 
   const backgroundSound = location.state?.audio;
   const backgroundImage = location.state?.background || localStorage.getItem('breathSelectedBackground');
@@ -22,33 +22,31 @@ const FinalPage = () => {
       document.body.style.backgroundAttachment = 'fixed';
     }
 
-    if (backgroundSound) {
-      try {
-        const audio = new Audio(backgroundSound);
-        audio.loop = true;
-        audio.play().then(() => {
-          console.log('Audio initialized and playing:', audio);
-          backgroundAudioRef.current = audio;
-        }).catch((error) => console.error('Audio Playback Error:', error));
-      } catch (error) {
-        console.error('Audio Initialization Error:', error);
-      }
+    if (backgroundSound && !backgroundAudioRef.current) {
+      // Initialize and play the background sound
+      const audio = new Audio(backgroundSound);
+      audio.loop = true;
+      audio.play().then(() => {
+        console.log('Audio initialized and playing:', audio);
+        backgroundAudioRef.current = audio; // Store the audio instance in ref
+      }).catch((error) => console.error('Audio Playback Error:', error));
     }
 
     return () => {
+      // Cleanup the audio when component unmounts
       if (backgroundAudioRef.current) {
         backgroundAudioRef.current.pause();
-        backgroundAudioRef.current = null;
+        backgroundAudioRef.current = null; // Reset the reference on unmount
       }
       document.body.style.backgroundImage = 'none';
     };
-  }, [backgroundImage, backgroundSound]);
+  }, [backgroundSound, backgroundImage]);
 
   const stopBackgroundSound = () => {
     console.log('Attempting to stop background sound...', backgroundAudioRef.current);
     if (backgroundAudioRef.current) {
-      backgroundAudioRef.current.pause();
-      backgroundAudioRef.current = null;
+      backgroundAudioRef.current.pause(); // Pause the audio
+      backgroundAudioRef.current = null; // Reset the reference
       console.log('Background sound stopped.');
     } else {
       console.log('No background sound to stop.');
@@ -70,6 +68,11 @@ const FinalPage = () => {
 
   return (
     <div className="final-page">
+      {/* Added Container for "Now, let's breathe!" */}
+      <div className="instruction-container">
+        <h2>Now, let's breathe!</h2>
+      </div>
+
       <div className={`wrap ${animationStopped ? 'paused' : ''}`}>
         {Array.from({ length: 10 }, (_, i) => (
           <div className="circle" key={i} style={{ transform: `rotate(${36 * (i + 1)}deg)` }}>
@@ -103,4 +106,3 @@ const FinalPage = () => {
 };
 
 export default FinalPage;
-

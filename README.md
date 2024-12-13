@@ -1,6 +1,8 @@
-# Ambient Sound & Background Selector
+# Safe Space - Mental Health Exercises 
+Safe Space is a React application that is build for mental health exercises. Currently, only "A Breath of Fresh Air" is available to explore.
 
-Safe Space is a React application that is build for mental health exercises. Currently, only "A Breath of Fresh Air" is available to explore. This exercise allows users to explore and select calming sounds and ambient backgrounds and a relaxing animation to breath along. The selected sound can be set as a looping background audio, and the chosen background can persist across sessions. The app offers predefined categories, search functionality, and a favorites feature.
+## A Breath of Fresh Air: A Breathing Exercise Allowing Users to Choose A Background Image and Ambient Sound
+ This exercise allows users to explore and select calming sounds and ambient backgrounds and a relaxing animation to breath along. The selected sound can be set as a looping background audio, and the chosen background can persist across sessions. The app offers predefined categories, search functionality, and a favorites feature.
 
 ## Features
 

@@ -82,22 +82,21 @@
     flex-direction: column;
     position: relative; 
     padding: 1rem 0.5rem 1rem 0.5rem;
-    /* Order: top right bottom left */
     object-fit: cover; 
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .polaroid-card:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: scale(1.05); 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 /* Polaroid Image Styling */
 .polaroid-image {
-    width: 100%; /* Fill the card width */
-    margin-top: 1.5rem; /* Space between the header and image */
-    margin-bottom: 2rem; /* Space between the header and image */
-    aspect-ratio: 3 / 2; /* Maintain a taller aspect ratio */
-    object-fit: cover; /* Ensure the image covers its container */
+    width: 100%; 
+    margin-top: 1.5rem; 
+    margin-bottom: 2rem; 
+    aspect-ratio: 3 / 2; 
+    object-fit: cover; 
 }
 

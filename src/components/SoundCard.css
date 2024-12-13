@@ -1,8 +1,8 @@
 /* Sound Card Styling */
 .sound-card {
   width: 100%;
-  max-width: 300px; /* Limit card size for consistent layout */
-  padding: 1rem 2rem 3rem 1rem; /* Increased bottom padding for more spacing */
+  max-width: 300px; 
+  padding: 1rem 2rem 3rem 1rem; 
   background: #E8E4DB;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -10,7 +10,7 @@
   flex-direction: column;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
-  height: 100%; /* Ensure the card takes up the available height */
+  height: 100%; 
 }
 
 .sound-card:hover {
@@ -23,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem; /* Increased gap */
+  margin-bottom: 1rem; 
 }
 
 .sound-name {
@@ -37,7 +37,7 @@
 .audio-container {
   display: flex;
   justify-content: center;
-  margin-top: 1rem; /* Increased gap between name and player */
+  margin-top: 1rem; 
 }
 
 audio {
@@ -45,7 +45,7 @@ audio {
   border-radius: 5px;
 }
 
-/* Spacer to push the button to the bottom */
+
 .spacer {
   flex-grow: 1; /* This will push the button down */
 }
@@ -54,8 +54,8 @@ audio {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 2rem; /* Adjust the button container margin */
-  padding-bottom: 1rem; /* Add some space below the button */
+  margin-top: 2rem; 
+  padding-bottom: 1rem; 
 }
 
 /* Set as Background Button Styling */

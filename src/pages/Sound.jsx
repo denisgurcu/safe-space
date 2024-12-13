@@ -12,13 +12,13 @@ const predefinedCategories = [
 ];
 
 const Sound = () => {
-    const [query, setQuery] = useState('');
-    const [sounds, setSounds] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [activeCategory, setActiveCategory] = useState(null);
-    const [backgroundAudio, setBackgroundAudio] = useState(null);
-    const [backgroundSound, setBackgroundSound] = useState(null);
+    const [query, setQuery] = useState(''); // State for search input
+    const [sounds, setSounds] = useState([]); // State for fetched sound results
+    const [loading, setLoading] = useState(false); // State for loading status
+    const [error, setError] = useState(null); // State for error message
+    const [activeCategory, setActiveCategory] = useState(null); // State for active category
+    const [backgroundAudio, setBackgroundAudio] = useState(null); // State for currently playing audio
+    const [backgroundSound, setBackgroundSound] = useState(null); // State for currently set background sound
 
     const navigate = useNavigate();
 
@@ -44,12 +44,12 @@ const Sound = () => {
 
     const fetchSounds = async (searchQuery) => {
         if (!searchQuery.trim()) {
-            setError('Please enter a search term.');
+            setError('Please enter a search term.'); // Set error if search query is empty
             return;
         }
 
-        setLoading(true);
-        setError(null);
+        setLoading(true); // Set loading state to true when fetching starts
+        setError(null); // Reset error message
 
         try {
             const response = await axios.get('https://freesound.org/apiv2/search/text/', {
@@ -61,6 +61,7 @@ const Sound = () => {
             });
 
             if (response.data.results?.length) {
+                // Fetch sound details and add preview URLs
                 const soundsWithPreviews = await Promise.all(
                     response.data.results.map(async (sound) => {
                         const details = await axios.get(`https://freesound.org/apiv2/sounds/${sound.id}/`, {
@@ -71,38 +72,40 @@ const Sound = () => {
                         return { ...sound, previews: details.data.previews };
                     })
                 );
-                setSounds(soundsWithPreviews);
+                setSounds(soundsWithPreviews); // Set sounds with preview URLs
             } else {
-                setError('No sounds found for your search term.');
+                setError('No sounds found for your search term.'); // Set error if no sounds found
             }
         } catch (error) {
-            console.error('Error fetching sounds:', error);
-            setError('Failed to fetch sounds. Please try again.');
+            console.error('Error fetching sounds:', error); // Log error in console
+            setError('Failed to fetch sounds. Please try again.'); // Set error message on failure
         } finally {
-            setLoading(false);
+            setLoading(false); // Set loading state to false once fetching is complete
         }
     };
 
     useEffect(() => {
-        fetchSounds('ambient sounds'); // Default search term
+        fetchSounds('ambient sounds'); // Default search term when component mounts
     }, []);
 
     const handleSetBackgroundSound = (previewUrl) => {
+        // Toggle play/pause background sound
         if (backgroundAudio && backgroundSound === previewUrl) {
-            backgroundAudio.pause();
+            backgroundAudio.pause(); // Pause if sound is already playing
             setBackgroundAudio(null);
             setBackgroundSound(null);
         } else {
-            if (backgroundAudio) backgroundAudio.pause();
+            if (backgroundAudio) backgroundAudio.pause(); // Pause current sound before playing a new one
             const newAudio = new Audio(previewUrl);
-            newAudio.loop = true;
-            newAudio.play();
-            setBackgroundAudio(newAudio);
-            setBackgroundSound(previewUrl);
+            newAudio.loop = true; // Loop the sound
+            newAudio.play(); // Play the new sound
+            setBackgroundAudio(newAudio); // Set new audio as background
+            setBackgroundSound(previewUrl); // Set the preview URL as background sound
         }
     };
 
     const handleContinue = () => {
+        // Navigate to the final page with background image and sound state
         navigate('/final-page', {
             state: {
                 background: localStorage.getItem('breathSelectedBackground'), // Persist background image
@@ -124,8 +127,8 @@ const Sound = () => {
                         key={category.title}
                         className={`category-btn ${activeCategory === category.title ? 'active' : ''}`}
                         onClick={() => {
-                            setActiveCategory(category.title);
-                            fetchSounds(category.query);
+                            setActiveCategory(category.title); // Set active category
+                            fetchSounds(category.query); // Fetch sounds for selected category
                         }}
                     >
                         {category.title}
@@ -138,22 +141,22 @@ const Sound = () => {
                     type="text"
                     placeholder="Select a category or search for a sound (e.g., guitar, beach...)"
                     value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    onChange={(e) => setQuery(e.target.value)} // Update query on input change
                 />
                 <button className="search-btn" onClick={() => fetchSounds(query)} disabled={loading}>
-                    {loading ? 'Searching...' : 'Search'}
+                    {loading ? 'Searching...' : 'Search'} {/* Show loading state if searching */}
                 </button>
             </div>
 
-            {error && <p className="error-message">{error}</p>}
+            {error && <p className="error-message">{error}</p>} {/* Display error message if there's an error */}
 
             <div className="sound-results">
                 {sounds.map((sound) => (
                     <SoundCard
                         key={sound.id}
                         sound={sound}
-                        handleSetBackground={handleSetBackgroundSound}
-                        isBackground={backgroundSound === sound.previews['preview-hq-mp3']}
+                        handleSetBackground={handleSetBackgroundSound} // Pass handler to set background sound
+                        isBackground={backgroundSound === sound.previews['preview-hq-mp3']} // Check if the sound is currently set as background
                     />
                 ))}
             </div>

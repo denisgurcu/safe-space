@@ -52,10 +52,10 @@
   
   .sound-results {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
-    gap: 5rem; /* Increased gap between cards */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 5rem; 
     justify-items: center;
-    padding: 1rem; /* Added padding around the grid */
+    padding: 1rem; 
 }
   
   .sound-item {
@@ -79,7 +79,7 @@
   }
   
   .error-message {
-    color: red;
+
     font-family: var(--fira);
     font-size: 1rem;
   }
@@ -99,18 +99,16 @@
     font-size: 0.8rem; 
   }
   
-  /* Style for the search button on hover */
+
   .search-btn:hover {
     background-color: var(--darkgreen);  /* Darker green on hover */
   }
   
-  /* Style for the search button when disabled */
   .search-btn:disabled {
-    background-color: #ccc; /* Light grey background when disabled */
-    cursor: not-allowed; /* Not-allowed cursor */
+    background-color: #ccc; 
+    cursor: not-allowed;
   }
 
-  /* Continue Button Styling */
 .continue-btn-wrapper {
     margin-top: 5rem;
   }

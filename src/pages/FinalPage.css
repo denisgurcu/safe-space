@@ -17,7 +17,7 @@
   font-size: 2rem;
   font-weight: bold;
   color: var(--softblack);
-  z-index: 1; /* Ensure this appears above the circles */
+  z-index: 1;
   font-family: var(--bowlby);
 }
 

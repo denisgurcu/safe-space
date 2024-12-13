@@ -88,17 +88,17 @@
 .search-bar input {
   font-family: var(--fira);
   background-color: var(--white);
-  width: 50%; /* Adjust the width of the search bar */
+  width: 50%; 
   padding: 0.5rem;
   font-size: 0.8rem;
-  border: 2px solid var(--softblack); /* Match the theme */
+  border: 2px solid var(--softblack); 
   border-radius: 25px;
   outline: none;
   transition: border-color 0.3s;
 }
 
 .search-bar input:focus {
-  border-color: #322f61; /* Change border color when focused */
+  border-color: #322f61; 
 }
 
 .grid-section {

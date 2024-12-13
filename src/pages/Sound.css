@@ -52,10 +52,11 @@
   
   .sound-results {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
+    gap: 5rem; /* Increased gap between cards */
     justify-items: center;
-  }
+    padding: 1rem; /* Added padding around the grid */
+}
   
   .sound-item {
     background-color: var(--darkgreen);
@@ -111,7 +112,7 @@
 
   /* Continue Button Styling */
 .continue-btn-wrapper {
-    margin-top: 2rem;
+    margin-top: 5rem;
   }
   
   .continue-btn {

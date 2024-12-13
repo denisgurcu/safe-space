@@ -22,6 +22,10 @@ const SoundCard = ({ sound, handleSetBackground, isBackground }) => {
                     <p>Preview not available</p>
                 )}
             </div>
+
+            {/* Spacer to push the button down */}
+            <div className="spacer"></div>
+
             <div className="button-container">
                 {/* Set as Background Button */}
                 <button

@@ -2,7 +2,7 @@
 .sound-card {
   width: 100%;
   max-width: 300px; /* Limit card size for consistent layout */
-  padding: 1rem 2rem 2em 1rem;
+  padding: 1rem 2rem 3rem 1rem; /* Increased bottom padding for more spacing */
   background: #E8E4DB;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -10,7 +10,7 @@
   flex-direction: column;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
-  object-fit: cover;
+  height: 100%; /* Ensure the card takes up the available height */
 }
 
 .sound-card:hover {
@@ -44,28 +44,38 @@ audio {
   width: 100%;
   border-radius: 5px;
 }
+
+/* Spacer to push the button to the bottom */
+.spacer {
+  flex-grow: 1; /* This will push the button down */
+}
+
+/* Button Container Styling */
 .button-container {
-    margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* Adjust the button container margin */
+  padding-bottom: 1rem; /* Add some space below the button */
 }
 
 /* Set as Background Button Styling */
 .set-bg-btn {
-    background-color: var(--white);
-    color: var(--softblack);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .set-bg-btn.playing {
-    background-color: var(--darkgreen);
-    color: var(--white);
-  }
-  
-  .set-bg-btn:hover {
-    background-color: var(--darkgreen);
-    color: var(--white);
-  }
+  background-color: var(--white);
+  color: var(--softblack);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.set-bg-btn.playing {
+  background-color: var(--darkgreen);
+  color: var(--white);
+}
+
+.set-bg-btn:hover {
+  background-color: var(--darkgreen);
+  color: var(--white);
+}
